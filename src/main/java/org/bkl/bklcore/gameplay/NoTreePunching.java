@@ -9,13 +9,6 @@ import org.bukkit.event.block.BlockBreakEvent;
 public class NoTreePunching implements Listener {
     @EventHandler
     public void onNoTreePunching(BlockBreakEvent event) {
-        Player player = event.getPlayer();
-        Material[] axe = {
-                Material.DIAMOND_AXE,
-                Material.IRON_AXE,
-                Material.STONE_AXE,
-                Material.NETHERITE_AXE
-        };
         Material[] log = {
                 Material.OAK_LOG,
                 Material.SPRUCE_LOG,
@@ -34,23 +27,20 @@ public class NoTreePunching implements Listener {
                 Material.STRIPPED_ACACIA_LOG,
                 Material.STRIPPED_MANGROVE_LOG
         };
-//        if (player.getInventory().getItemInMainHand().getType().equals(Material.DIAMOND_AXE)) {
-//            event.setCancelled(false);
-//        } else if (event.getBlock().getType().equals(Material.OAK_LOG)) {
-//            event.setCancelled(true);
-//            player.sendMessage(String.valueOf(Material.OAK_LOG));
-//        }
+        Player player = event.getPlayer();
         for (int i = 0; i < log.length; i++) {
-            if (event.getBlock().getType().equals(log[i])) {
+            if (player.getInventory().getItemInMainHand().getType().equals(Material.STONE_AXE)) {
+                event.setCancelled(false);
+            } else if (player.getInventory().getItemInMainHand().getType().equals(Material.IRON_AXE)) {
+                event.setCancelled(false);
+            } else if (player.getInventory().getItemInMainHand().getType().equals(Material.DIAMOND_AXE)) {
+                event.setCancelled(false);
+            } else if (player.getInventory().getItemInMainHand().getType().equals(Material.NETHERITE_AXE)) {
+                event.setCancelled(false);
+            } else if (event.getBlock().getType().equals(log[i])) {
                 event.setCancelled(true);
-                player.damage(0.5);
                 player.sendMessage(String.valueOf(log[i]));
-            } else {
-                for (int j = 0; j < axe.length; j++) {
-                    if (player.getInventory().getItemInMainHand().getType().equals(axe[j])) {
-                        event.setCancelled(false);
-                    }
-                }
+                player.damage(0.5);
             }
         }
     }
