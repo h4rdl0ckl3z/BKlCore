@@ -43,6 +43,7 @@ public class NoTreePunching implements Listener {
         for (int i = 0; i < log.length; i++) {
             if (event.getBlock().getType().equals(log[i])) {
                 event.setCancelled(true);
+                player.damage(0.5);
                 player.sendMessage(String.valueOf(log[i]));
             } else {
                 for (int j = 0; j < axe.length; j++) {
