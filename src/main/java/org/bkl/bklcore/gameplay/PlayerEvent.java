@@ -13,21 +13,22 @@ public class PlayerEvent implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-//        event.setJoinMessage(ChatColor.YELLOW + player.getName() + "joined the game");
-//        player.getInventory().addItem(new ItemStack(Material.APPLE, 1));
         if (player.hasPlayedBefore()) {
             event.setJoinMessage(ChatColor.YELLOW + player.getName() + " joined the game");
         } else {
             event.setJoinMessage(ChatColor.GREEN + player.getName() + " joined the game");
-//            Material[] material = {
-//                    Material.STONE_SWORD, Material.STONE_AXE, Material.STONE_PICKAXE, Material.STONE_SHOVEL,
-//                    Material.LEATHER_HELMET, Material.LEATHER_CHESTPLATE, Material.LEATHER_LEGGINGS, Material.LEATHER_BOOTS,
-//                    Material.CAMPFIRE
-//            };
-//            for (int i = 0; i < material.length; i++) {
-//                player.getInventory().addItem(new ItemStack(material[i], 1));
-//            }
-//            player.getInventory().addItem(new ItemStack(Material.BREAD, 32));
+            Material[] material = {
+                    Material.STONE_SWORD, Material.STONE_AXE, Material.STONE_PICKAXE, Material.STONE_SHOVEL,
+                    Material.CAMPFIRE
+            };
+            for (int i = 0; i < material.length; i++) {
+                player.getInventory().addItem(new ItemStack(material[i], 1));
+            }
+            player.getInventory().addItem(new ItemStack(Material.BREAD, 32));
+            player.getInventory().setHelmet(new ItemStack(Material.LEATHER_HELMET));
+            player.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
+            player.getInventory().setLeggings(new ItemStack(Material.LEATHER_LEGGINGS));
+            player.getInventory().setBoots(new ItemStack(Material.LEATHER_BOOTS));
         }
     }
 
