@@ -1,0 +1,4 @@
+name: BKlCore
+version: '${version}'
+main: org.bkl.bklcore.BKlCore
+api-version: '1.20'
