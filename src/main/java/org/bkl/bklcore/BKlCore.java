@@ -1,5 +1,6 @@
 package org.bkl.bklcore;
 
+import org.bkl.bklcore.Items.Test;
 import org.bkl.bklcore.gameplay.FarmProtection;
 import org.bkl.bklcore.gameplay.NoTreePunching;
 import org.bkl.bklcore.gameplay.PlayerEvent;
@@ -20,6 +21,7 @@ public final class BKlCore extends JavaPlugin {
 //        Command();
         GamePlay();
         GameRule();
+        Test.TestItems();
     }
 
     @Override
