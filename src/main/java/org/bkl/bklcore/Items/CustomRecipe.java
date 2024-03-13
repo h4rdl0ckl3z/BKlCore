@@ -14,7 +14,7 @@ public class CustomRecipe {
     public static void FlintAxe() {
         ItemManager.init();
 
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(JavaPlugin.getPlugin(BKlCore.class), "Flint-Axe"), ItemManager.flintaxe);
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(JavaPlugin.getPlugin(BKlCore.class), "Flint-Axe"), ItemManager.getFlintaxe());
         recipe.shape("EE", "S ");
         recipe.shape("EE", " S");
         recipe.setIngredient('E', Material.FLINT);
