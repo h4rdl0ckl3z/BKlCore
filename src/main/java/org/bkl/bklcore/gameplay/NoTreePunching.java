@@ -1,5 +1,6 @@
 package org.bkl.bklcore.gameplay;
 
+import org.bkl.bklcore.Items.ItemManager;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -29,7 +30,9 @@ public class NoTreePunching implements Listener {
         };
         Player player = event.getPlayer();
         for (int i = 0; i < log.length; i++) {
-            if (player.getInventory().getItemInMainHand().getType().equals(Material.STONE_AXE)) {
+            if (player.getInventory().getItemInMainHand().getType().equals(Material.WOODEN_AXE)) {
+                event.setCancelled(false);
+            } else if (player.getInventory().getItemInMainHand().getType().equals(Material.STONE_AXE)) {
                 event.setCancelled(false);
             } else if (player.getInventory().getItemInMainHand().getType().equals(Material.IRON_AXE)) {
                 event.setCancelled(false);

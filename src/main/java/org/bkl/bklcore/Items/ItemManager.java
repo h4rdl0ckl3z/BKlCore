@@ -21,8 +21,9 @@ public class ItemManager {
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(ChatColor.WHITE + "Flint Axe");
         List<String> lore = new ArrayList<>();
-        lore.add("Flint Axe");
+//        lore.add("Flint Axe");
         meta.setLore(lore);
+        meta.setCustomModelData(1);
 
         item.setItemMeta(meta);
         flintaxe = item;
