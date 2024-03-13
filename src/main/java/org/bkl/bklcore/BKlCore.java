@@ -1,6 +1,6 @@
 package org.bkl.bklcore;
 
-import org.bkl.bklcore.Items.Test;
+import org.bkl.bklcore.Items.CustomRecipe;
 import org.bkl.bklcore.gameplay.FarmProtection;
 import org.bkl.bklcore.gameplay.NoTreePunching;
 import org.bkl.bklcore.gameplay.PlayerEvent;
@@ -27,6 +27,7 @@ public final class BKlCore extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        getLogger().info("Disable Plugin");
     }
 
     public void Command() {
@@ -41,7 +42,6 @@ public final class BKlCore extends JavaPlugin {
     }
 
     public void Items() {
-        Test.TestItems();
-        Test.FlintAxe();
+        CustomRecipe.init();
     }
 }
