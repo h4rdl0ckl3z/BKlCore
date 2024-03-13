@@ -21,7 +21,7 @@ public final class BKlCore extends JavaPlugin {
 //        Command();
         GamePlay();
         GameRule();
-        Test.TestItems();
+        Items();
     }
 
     @Override
@@ -38,5 +38,10 @@ public final class BKlCore extends JavaPlugin {
     }
     public void GameRule() {
 //        getServer().getPluginManager().registerEvents( new NaturalRegeneration(), this);
+    }
+
+    public void Items() {
+        Test.TestItems();
+        Test.FlintAxe();
     }
 }

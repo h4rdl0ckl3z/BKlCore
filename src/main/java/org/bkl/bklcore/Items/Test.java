@@ -21,4 +21,16 @@ public class Test {
         recipe.setIngredient( 'S', Material.STICK );
         getServer().addRecipe( recipe );
     }
+
+    public static void FlintAxe() {
+        ItemStack axe = new ItemStack(Material.WOODEN_AXE);
+        ItemMeta im = axe.getItemMeta();
+        im.setDisplayName("Flint Axe");
+        axe.setItemMeta(im);
+        ShapedRecipe recipe = new ShapedRecipe(axe);
+        recipe.shape("EE ", " S ");
+        recipe.setIngredient('E', Material.FLINT);
+        recipe.setIngredient('S', Material.STICK);
+        getServer().addRecipe(recipe);
+    }
 }
