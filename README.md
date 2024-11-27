@@ -1,4 +1,4 @@
-# BKlCore
+# BKlCore Example Spigot or Paper plugin
 - FarmProtect
 - NaturalRegeneration
 - NoTreePunching
